@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paqui - Sesiones Compassionate Inquiry®</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fafafa;
+        }
+
+        header {
+            background: linear-gradient(135deg, #6b5b95 0%, #88498f 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        section {
+            background: white;
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        section h2 {
+            color: #6b5b95;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        section p {
+            margin-bottom: 15px;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .offer-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .offer-card {
+            background: #f8f5ff;
+            padding: 25px;
+            border-radius: 6px;
+            text-align: center;
+            border-left: 4px solid #6b5b95;
+        }
+
+        .offer-card h3 {
+            color: #6b5b95;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .price {
+            font-size: 2rem;
+            color: #6b5b95;
+            font-weight: 700;
+            margin: 10px 0;
+        }
+
+        .duration {
+            color: #888;
+            font-size: 0.95rem;
+        }
+
+        ul {
+            margin: 20px 0 20px 20px;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #6b5b95 0%, #88498f 100%);
+            color: white;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(107, 91, 149, 0.3);
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 0.95rem;
+        }
+
+        .contact-info {
+            background: #f0ebf8;
+            padding: 20px;
+            border-radius: 6px;
+            margin-top: 20px;
+        }
+
+        .contact-info p {
+            margin: 10px 0;
+        }
+
+        .contact-info a {
+            color: #6b5b95;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .offer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 25px;
+            }
+
+            header {
+                padding: 50px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Paqui</h1>
+        <p>Sesiones de acompañamiento en Compassionate Inquiry®</p>
+    </header>
+
+    <div class="container">
+        <!-- Sobre mí -->
+        <section>
+            <h2>Sobre mí</h2>
+            <p>Soy facilitadora de Compassionate Inquiry®, un enfoque de acompañamiento emocional que te ayuda a explorar y comprender tus patrones, creencias y bloqueos con compasión y claridad.</p>
+            <p>Mi trabajo se centra en acompañarte en un proceso de autoexploración donde puedas conectar con tu propia sabiduría interior y encontrar mayor libertad y coherencia en tu vida.</p>
+        </section>
+
+        <!-- Oferta de sesiones -->
+        <section>
+            <h2>Sesiones disponibles</h2>
+            <p>Ofrezco sesiones individuales de 60 minutos en formato online.</p>
+
+            <div class="offer-grid">
+                <div class="offer-card">
+                    <h3>Sesión Regular</h3>
+                    <div class="price">80€</div>
+                    <div class="duration">60 minutos</div>
+                </div>
+                <div class="offer-card">
+                    <h3>Tarifa Reducida</h3>
+                    <div class="price">60€</div>
+                    <div class="duration">60 minutos</div>
+                </div>
+            </div>
+
+            <p><strong>¿Para quién es esta sesión?</strong></p>
+            <ul>
+                <li>Personas en búsqueda de autoconocimiento profundo</li>
+                <li>Quienes desean comprender sus patrones emocionales</li>
+                <li>Aquellos que buscan mayor claridad en decisiones importantes</li>
+                <li>Personas interesadas en el crecimiento personal consciente</li>
+            </ul>
+        </section>
+
+        <!-- Proceso -->
+        <section>
+            <h2>¿Cómo funciona?</h2>
+            <p>Cada sesión es un espacio seguro, confidencial y libre de juicio donde podemos explorar juntas lo que te ocupa.</p>
+            <ul>
+                <li><strong>Escucha activa:</strong> Estoy presente para ti, sin prisa</li>
+                <li><strong>Preguntas facilitadoras:</strong> Para acceder a tu propia comprensión</li>
+                <li><strong>Confidencialidad:</strong> Tu espacio privado y protegido</li>
+                <li><strong>Formato online:</strong> Cómodo, accesible desde cualquier lugar</li>
+            </ul>
+        </section>
+
+        <!-- CTA y contacto -->
+        <section>
+            <h2>Comenzar una sesión</h2>
+            <p>Si sientes que una sesión de acompañamiento es lo que necesitas, me encantaría conectar contigo.</p>
+
+            <div class="contact-info">
+                <p><strong>📧 Contacto:</strong> <a href="mailto:paquirh3@gmail.com">paquirh3@gmail.com</a></p>
+                <p style="margin-top: 15px; font-size: 0.9rem; color: #666;">Respondo en un máximo de 24 horas</p>
+            </div>
+
+            <button class="cta-button" onclick="window.location.href='mailto:paquirh3@gmail.com?subject=Solicito%20una%20sesión%20de%20Compassionate%20Inquiry'">
+                Solicitar sesión
+            </button>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Paqui. Sesiones de acompañamiento en Compassionate Inquiry®</p>
+        <p style="margin-top: 10px; opacity: 0.8;">Hecho con coherencia y cuidado</p>
+    </footer>
+</body>
+</html>
