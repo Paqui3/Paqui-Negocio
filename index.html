@@ -3,337 +3,549 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Sesiones de Compassionate Inquiry® - Acompañamiento emocional. Explore sus patrones, creencias y bloqueos con compasión y claridad.">
-    <meta name="theme-color" content="#6b5b95">
-    <title>Paqui - Sesiones Compassionate Inquiry®</title>
+    <title>Paqui Romero | Acompañamiento en Compassionate Inquiry®</title>
+    <meta name="description" content="Acompañamiento individual en Compassionate Inquiry®. Explora la raíz de lo que se repite en tu vida y procesa lo que quedó sin resolver.">
+    <meta name="keywords" content="Compassionate Inquiry, trauma, acompañamiento, Indagación Compasiva, Paqui Romero">
+    <meta name="author" content="Paqui Romero">
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@400;600;700&family=Manrope:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary: #6b5b95;
-            --primary-light: #88498f;
-            --accent-bg: #f8f5ff;
-            --text-primary: #333;
-            --text-secondary: #555;
-            --text-muted: #888;
-            --bg-main: #fafafa;
-            --bg-card: white;
-            --shadow-sm: 0 2px 8px rgba(0,0,0,0.1);
-            --shadow-md: 0 8px 16px rgba(107, 91, 149, 0.3);
-            --radius: 8px;
-            --spacing-unit: 4px;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
-            color: var(--text-primary);
-            background: var(--bg-main);
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            html {
-                scroll-behavior: auto;
-            }
-            * {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
-
-        header {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-            color: white;
-            padding: calc(var(--spacing-unit) * 20) calc(var(--spacing-unit) * 5);
-            text-align: center;
-        }
-
-        header h1 {
-            font-size: clamp(2rem, 5vw, 2.5rem);
-            margin-bottom: calc(var(--spacing-unit) * 2.5);
-            font-weight: 600;
-            line-height: 1.2;
-        }
-
-        header p {
-            font-size: clamp(1rem, 3vw, 1.2rem);
-            opacity: 0.95;
-            font-weight: 300;
-            max-width: 600px;
-            margin: 0 auto;
+            font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.8;
+            color: #343632;
+            background: #F6F2EA;
         }
 
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
-            padding: calc(var(--spacing-unit) * 15) calc(var(--spacing-unit) * 5);
+            padding: 0 40px;
         }
 
+        /* HERO */
+        .hero {
+            padding: 120px 40px;
+            text-align: center;
+            background: white;
+        }
+        .hero h1 {
+            font-family: 'Newsreader', Georgia, serif;
+            font-size: 3em;
+            margin-bottom: 30px;
+            color: #343632;
+            line-height: 1.2;
+        }
+        .hero p {
+            font-size: 1.1em;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        /* SECCIÓN GENERAL */
         section {
-            background: var(--bg-card);
-            padding: calc(var(--spacing-unit) * 10);
-            margin-bottom: calc(var(--spacing-unit) * 7.5);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow-sm);
+            padding: 80px 40px;
+            background: white;
+            margin-top: 40px;
+        }
+        section:nth-child(even) {
+            background: #F6F2EA;
         }
 
-        section h2 {
-            color: var(--primary);
-            margin-bottom: calc(var(--spacing-unit) * 5);
-            font-size: clamp(1.5rem, 4vw, 1.8rem);
+        h2 {
+            font-family: 'Newsreader', Georgia, serif;
+            font-size: 2.2em;
+            margin-bottom: 30px;
+            color: #46584D;
             line-height: 1.2;
         }
 
-        section p {
-            margin-bottom: calc(var(--spacing-unit) * 3.75);
-            color: var(--text-secondary);
-            line-height: 1.8;
+        h3 {
+            font-family: 'Newsreader', Georgia, serif;
+            font-size: 1.4em;
+            margin-top: 20px;
+            margin-bottom: 15px;
+            color: #46584D;
         }
 
-        .offer-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: calc(var(--spacing-unit) * 5);
-            margin: calc(var(--spacing-unit) * 7.5) 0;
-        }
-
-        .offer-card {
-            background: var(--accent-bg);
-            padding: calc(var(--spacing-unit) * 6.25);
-            border-radius: var(--radius);
-            text-align: center;
-            border-left: 4px solid var(--primary);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .offer-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .offer-card h3 {
-            color: var(--primary);
-            margin-bottom: calc(var(--spacing-unit) * 2.5);
-            font-size: 1.1rem;
-        }
-
-        .price {
-            font-size: 2rem;
-            color: var(--primary);
-            font-weight: 700;
-            margin: calc(var(--spacing-unit) * 2.5) 0;
-        }
-
-        .duration {
-            color: var(--text-muted);
-            font-size: 0.95rem;
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
         }
 
         ul {
-            margin: calc(var(--spacing-unit) * 5) 0 calc(var(--spacing-unit) * 5) calc(var(--spacing-unit) * 5);
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        li {
+            margin-bottom: 12px;
         }
 
-        ul li {
-            margin-bottom: calc(var(--spacing-unit) * 2.5);
-            color: var(--text-secondary);
+        /* S2 - VALIDACIÓN */
+        .validation-list li {
+            position: relative;
+            padding-left: 20px;
+        }
+        .validation-list li:before {
+            content: "•";
+            color: #46584D;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* S5 - ACOMPAÑAMIENTO */
+        .acompanamiento-box {
+            background: #46584D;
+            color: white;
+            padding: 60px 40px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        .acompanamiento-box h3 {
+            color: white;
+            margin-top: 0;
+        }
+
+        /* S6 - MANTRA */
+        .mantra {
+            text-align: center;
+            padding: 60px 40px !important;
+            background: white;
+        }
+        .mantra-text {
+            font-size: 1.8em;
+            font-weight: 600;
+            color: #46584D;
+            margin-bottom: 20px;
+            font-family: 'Newsreader', Georgia, serif;
+        }
+        .mantra-sub {
+            font-style: italic;
+            color: #999;
+            font-size: 1em;
+        }
+
+        /* S7 - SOY PAQUI CON FOTO */
+        .paqui-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+            padding: 80px 40px !important;
+        }
+        .paqui-text h2 {
+            margin-top: 0;
+        }
+        .paqui-photo {
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+        .paqui-photo img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* S8 - CÓMO EMPEZAR CON FOTO */
+        .empezar-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+            padding: 80px 40px !important;
+        }
+        .empezar-photo {
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+            order: 2;
+        }
+        .empezar-photo img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .empezar-text {
+            order: 1;
+        }
+
+        /* S9 - TESTIMONIOS */
+        .testimonios {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        .testimonial {
+            background: #F6F2EA;
+            padding: 30px;
+            border-left: 4px solid #46584D;
+            border-radius: 4px;
+        }
+        .testimonial-quote {
+            font-style: italic;
+            margin-bottom: 20px;
             line-height: 1.8;
         }
+        .testimonial-author {
+            font-size: 0.95em;
+            color: #666;
+            font-weight: 500;
+        }
 
+        /* CTA BUTTON */
         .cta-button {
             display: inline-block;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-            color: white;
-            padding: calc(var(--spacing-unit) * 3.75) calc(var(--spacing-unit) * 10);
-            text-decoration: none;
-            border-radius: var(--radius);
+            background: #E3DDD2;
+            color: #46584D;
+            padding: 15px 30px;
+            border-radius: 4px;
             font-weight: 600;
-            margin-top: calc(var(--spacing-unit) * 5);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            border: none;
+            text-decoration: none;
+            margin-top: 20px;
             cursor: pointer;
-            font-size: 1rem;
+            border: none;
             text-align: center;
+            transition: background 0.3s, box-shadow 0.3s;
+            font-family: 'Manrope', sans-serif;
+            font-size: 1em;
         }
-
         .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
+            background: #D0CBC2;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
-        .cta-button:focus-visible {
-            outline: 2px solid var(--primary);
-            outline-offset: 2px;
-        }
-
-        .cta-button:active {
-            transform: translateY(0);
-        }
-
-        a {
-            transition: color 0.2s ease;
-        }
-
-        a:focus-visible {
-            outline: 2px solid var(--primary);
-            outline-offset: 2px;
-            border-radius: 2px;
-        }
-
-        footer {
-            background: var(--text-primary);
-            color: white;
+        /* S10 - CTA FINAL */
+        .cta-final {
             text-align: center;
-            padding: calc(var(--spacing-unit) * 7.5) calc(var(--spacing-unit) * 5);
-            font-size: 0.95rem;
-            margin-top: calc(var(--spacing-unit) * 10);
+            padding: 80px 40px !important;
         }
 
-        footer p:first-child {
-            margin-bottom: calc(var(--spacing-unit) * 2.5);
+        /* CONTACTO */
+        .contacto-section {
+            padding: 80px 40px;
+            background: white;
+            margin-top: 40px;
+        }
+        .contacto-section h2 {
+            text-align: center;
+            margin-bottom: 50px;
         }
 
-        footer p:last-child {
-            opacity: 0.8;
-            font-size: 0.9rem;
+        .form-group {
+            margin-bottom: 25px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
         }
-
-        .contact-info {
-            background: var(--accent-bg);
-            padding: calc(var(--spacing-unit) * 5);
-            border-radius: var(--radius);
-            margin-top: calc(var(--spacing-unit) * 5);
-            border-left: 4px solid var(--primary);
-        }
-
-        .contact-info p {
-            margin: calc(var(--spacing-unit) * 2.5) 0;
-            line-height: 1.6;
-        }
-
-        .contact-info a {
-            color: var(--primary);
-            text-decoration: none;
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
             font-weight: 600;
+            color: #46584D;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #E3DDD2;
+            border-radius: 4px;
+            font-family: 'Manrope', sans-serif;
+            font-size: 1em;
+            color: #343632;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #46584D;
+            box-shadow: 0 0 0 3px rgba(70, 88, 77, 0.1);
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
         }
 
-        .contact-info a:hover {
-            text-decoration: underline;
+        .form-container {
+            max-width: 500px;
+            margin: 0 auto;
         }
 
+        .form-submit {
+            width: 100%;
+            background: #46584D;
+            color: white;
+            padding: 15px 40px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            font-size: 1em;
+            font-family: 'Manrope', sans-serif;
+            transition: background 0.3s;
+        }
+        .form-submit:hover {
+            background: #3a4840;
+        }
+
+        .form-message {
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 15px;
+            border-radius: 4px;
+            text-align: center;
+            display: none;
+        }
+        .form-message.success {
+            background: #D4EDDA;
+            color: #155724;
+            border: 1px solid #C3E6CB;
+            display: block;
+        }
+        .form-message.error {
+            background: #F8D7DA;
+            color: #721C24;
+            border: 1px solid #F5C6CB;
+            display: block;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #F6F2EA;
+            padding: 40px;
+            text-align: center;
+            color: #999;
+            font-size: 0.9em;
+            margin-top: 60px;
+        }
+
+        /* RESPONSIVE */
         @media (max-width: 768px) {
-            .container {
-                padding: calc(var(--spacing-unit) * 10) calc(var(--spacing-unit) * 5);
-            }
-
-            section {
-                padding: calc(var(--spacing-unit) * 6.25);
-            }
-
-            header {
-                padding: calc(var(--spacing-unit) * 12.5) calc(var(--spacing-unit) * 5);
-            }
-        }
-
-        @media (max-width: 600px) {
-            .offer-grid {
+            .container { padding: 0 20px; }
+            .hero { padding: 80px 20px; }
+            .hero h1 { font-size: 2em; }
+            h2 { font-size: 1.6em; }
+            section { padding: 60px 20px; }
+            .paqui-section, .empezar-section, .testimonios {
                 grid-template-columns: 1fr;
-                gap: calc(var(--spacing-unit) * 3.75);
+                gap: 30px;
             }
-
-            section {
-                padding: calc(var(--spacing-unit) * 5);
-                margin-bottom: calc(var(--spacing-unit) * 5);
-            }
-
-            ul {
-                margin-left: calc(var(--spacing-unit) * 3.75);
-            }
-
-            .cta-button {
-                display: block;
-                width: 100%;
-            }
+            .empezar-photo { order: 1; }
+            .empezar-text { order: 2; }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Paqui Romero</h1>
-        <p>Sesiones de acompañamiento en Compassionate Inquiry®</p>
-    </header>
+    <!-- HERO -->
+    <section class="hero">
+        <h1>¿Qué es lo que se repite en tu vida?</h1>
+        <p>Aquello que parece no tener fin, que has intentado comprender y cambiar, pero sigue estando ahí.</p>
+        <p>Es posible que esté respondiendo a algo. Y que tenga una raíz.</p>
+    </section>
 
-    <div class="container">
-        <!-- Sobre mí -->
-        <section>
-            <h2>Sobre mí</h2>
-            <p>Mi acompañamiento se basa en Compassionate Inquiry® (Indagación Compasiva), un enfoque terapéutico desarrollado por el Dr. Gabor Maté y Sat Dharam Kaur ND, que explora la relación entre el trauma y nuestra experiencia corporal, emocional y mental.</p>
-
-            <p>Mi forma de acompañar no busca cambiar lo que te sucede sino comprenderlo. Nos acercamos con curiosidad y sin juicio a aquello que hoy te hace sufrir, para explorar qué está ocurriendo en ti y las respuestas que has ido desarrollando.</p>
-
-            <p>Para ello, exploramos tu experiencia en el momento presente, poniendo atención a lo que piensas, sientes y experimentas en el cuerpo. Desde ahí podemos ir reconociendo las emociones y necesidades, las creencias e interpretaciones que aparecen y las raíces de aquellas respuestas que hoy se repiten.</p>
-        </section>
-
-        <!-- Oferta de sesiones -->
-        <section>
-            <h2>Sesiones individuales</h2>
-            <p>No necesitas saber exactamente qué te pasa ni tener claro por dónde empezar. Podemos comenzar por aquello que esté presente para ti en este momento.</p>
-
-            <p>Puedes realizar una sesión puntual si hay una situación concreta que quieras atender o, si lo necesitas, dar continuidad al proceso a través de varias sesiones.</p>
-
-            <div class="offer-card">
-                <h3>Detalles de la sesión</h3>
-                <ul style="text-align: left; margin: 20px 0;">
-                    <li><strong>Formato:</strong> Online</li>
-                    <li><strong>Duración:</strong> 50–60 minutos</li>
-                    <li><strong>Precio por sesión:</strong> 70 €</li>
-                    <li><strong>Tarifa adaptada:</strong> disponible previa consulta</li>
-                    <li><strong>Opciones:</strong> sesión puntual o proceso de acompañamiento</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Proceso -->
-        <section>
-            <h2>¿Cómo funciona?</h2>
-            <p>Cada sesión es un espacio seguro, confidencial y libre de juicio, donde puedes acercarte a lo que estás viviendo con curiosidad, a tu propio ritmo y sin necesidad de tener todas las respuestas.</p>
-            <ul>
-                <li><strong>Escucha y presencia:</strong> Estoy contigo, sin prisa, acogiendo lo que emerge en cada momento.</li>
-                <li><strong>Indagación compasiva:</strong> A través de preguntas y de una escucha profunda, te acompaño a comprender qué hay detrás de lo que sientes, piensas o haces.</li>
-                <li><strong>Conexión contigo:</strong> No se trata solo de entender lo que te ocurre, sino de poder acercarte a tu experiencia de una manera diferente, con mayor conciencia y compasión.</li>
-                <li><strong>A tu propio ritmo:</strong> Tú marcas el paso. No hay nada que forzar ni ningún lugar concreto al que tengas que llegar.</li>
+    <!-- S2: VALIDACIÓN -->
+    <section>
+        <div class="container">
+            <h2>¿Te reconoces en alguna de estas situaciones?</h2>
+            <p>Estos patrones que reconocerás aquí no son casualidad. Son respuestas. Tienen raíz.</p>
+            <ul class="validation-list">
+                <li>Pensamientos que se repiten y no consigues parar</li>
+                <li>Emociones que te desbordan o de las que, a veces, desconectas</li>
+                <li>Sensaciones de tensión, cansancio o agitación en el cuerpo que aparecen una y otra vez</li>
+                <li>Dificultad para reconocer lo que necesitas, poner límites o priorizarte</li>
+                <li>Autoexigencia constante y dificultad para parar o, por el contrario, para pasar a la acción</li>
+                <li>Patrones que se repiten en situaciones o relaciones, aunque quieras responder de otra manera</li>
             </ul>
+            <p><em>Si te ves aquí, no es porque algo esté mal en ti. Es porque algo sucedió.</em></p>
+        </div>
+    </section>
 
-            <p style="margin-top: 30px; border-top: 1px solid #e0e0e0; padding-top: 30px;">Las sesiones son online, para que puedas realizarlas desde un espacio privado y tranquilo, estés donde estés.</p>
-        </section>
+    <!-- S3: ORIGEN Y SENTIDO -->
+    <section>
+        <div class="container">
+            <h2>Lo que te ocurre tiene una raíz y un sentido</h2>
+            <p>Tus patrones de reacción, tus miedos, tu forma de relacionarte — no aparecieron sin razón. Se construyeron como respuestas de protección ante experiencias que no pudieron ser acompañadas y sostenidas en su momento, y que tu sistema no pudo procesar.</p>
+            <p>El problema es que siguen activos. Como si tu cuerpo siguiera esperando un peligro que ya pasó.</p>
+            <p>Esto no es un defecto tuyo. Es cómo funciona el trauma. Queda atrapado en tu cuerpo, en tus emociones, en tu forma de pensar, porque tu sistema no tuvo manera de procesarlo e integrarlo en su momento.</p>
+        </div>
+    </section>
 
-        <!-- CTA y contacto -->
-        <section>
-            <h2>Comenzar una sesión</h2>
-            <p>Si sientes que puedo acompañarte, me encantaría conectar contigo.</p>
+    <!-- S4: COMPRENDER NO ES SUFICIENTE -->
+    <section>
+        <div class="container">
+            <h2>Comprender es necesario. Pero no es suficiente.</h2>
+            <p>Aunque ya hayas explorado tu historia. Incluso si comprendes de dónde vienen tus patrones y sabes exactamente por qué reaccionas como reaccionas.</p>
+            <p>Aun así, algo no cambia.</p>
+            <p>Porque lo que viviste no quedó registrado solo en tu mente.</p>
+            <p>Quedó en tu cuerpo. En tu sistema nervioso. En la forma en que tu cuerpo sigue reaccionando como si ese peligro siguiera presente.</p>
+            <p>Para que algo realmente cambie, necesitamos procesar lo que quedó sin procesar — lo corporal, lo emocional. Cuando aquello que antes no pudo ser visto, sentido, expresado o sostenido encuentra un espacio de presencia y compasión, puede ser integrado.</p>
+            <p>Cuando lo procesamos, la integración es posible. Y entonces, algo realmente cambia. Es esta integración la que puede ayudarte a reconectar contigo, reconocer con mayor claridad lo que sientes y necesitas, y ampliar tu capacidad de responder con mayor libertad.</p>
+        </div>
+    </section>
 
-            <div class="contact-info">
-                <p><strong>Contacto:</strong> <a href="mailto:ci.paquiromero@gmail.com">ci.paquiromero@gmail.com</a></p>
-                <p>Respondo en un máximo de 24 horas</p>
+    <!-- S5: ACOMPAÑAMIENTO -->
+    <section>
+        <div class="container">
+            <h2>Un espacio para explorar tu experiencia desde la curiosidad y la compasión</h2>
+
+            <h3>Definición de Compassionate Inquiry</h3>
+            <p>Mi acompañamiento se basa en <strong>Compassionate Inquiry®</strong> (Indagación Compasiva), un enfoque terapéutico desarrollado por el Dr. Gabor Maté y Sat Dharam Kaur ND, que explora la relación entre el trauma y nuestra experiencia corporal, emocional y mental.</p>
+
+            <div class="acompanamiento-box">
+                <h3>Cómo funciona el acompañamiento</h3>
+                <p><strong>Mi forma de acompañar busca comprender lo que te sucede antes de intentar cambiarlo.</strong></p>
+                <p>Exploro cómo lo que viviste quedó alojado en tu cuerpo y cómo eso determina tus respuestas hoy. No buscamos cambiar lo que sientes, sino <strong>llegar a la raíz de por qué lo sientes</strong>.</p>
+                <p>Nos acercamos con curiosidad y sin juicio a aquello que genera sufrimiento — tus pensamientos, emociones, sensaciones corporales, creencias e interpretaciones. Exploramos sus posibles raíces, a menudo vinculadas a experiencias de tu historia que quedaron sin procesar o integrar.</p>
             </div>
 
-            <a href="mailto:ci.paquiromero@gmail.com?subject=Solicito%20una%20sesión%20de%20Compassionate%20Inquiry" class="cta-button">
-                Solicitar sesión
-            </a>
-        </section>
-    </div>
+            <h3>La integración</h3>
+            <p>Cuando aquello que antes no pudo ser visto, sentido, expresado o sostenido encuentra un espacio de presencia y compasión, puede ser integrado.</p>
+            <p>Es esta integración la que puede ayudarte a reconectar contigo, reconocer con mayor claridad lo que sientes y necesitas, y ampliar tu capacidad de responder con mayor libertad.</p>
+        </div>
+    </section>
 
+    <!-- S6: MANTRA -->
+    <section class="mantra">
+        <div class="container">
+            <div class="mantra-text">Escuchar. Comprender. Acoger. Procesar. Integrar.</div>
+            <div class="mantra-sub">(Donde procesar es estar con lo que hay, acompañar, sostener.)</div>
+        </div>
+    </section>
+
+    <!-- S7: SOY PAQUI -->
+    <section>
+        <div class="paqui-section">
+            <div class="paqui-text">
+                <h2>Soy Paqui</h2>
+                <p>Desde niña me ha interesado escuchar a las personas y comprender sus historias. Sin embargo, mi camino profesional comenzó lejos del acompañamiento: me licencié en Económicas y Empresariales y durante años trabajé en el sector financiero.</p>
+                <p>La maternidad supuso un cambio vital. Despertó en mí un dolor profundo que me llevó a iniciar un camino de búsqueda, formación y transformación.</p>
+                <p>Durante más de quince años he ido aprendiendo a conocer mi mente, sentir mi corazón y escuchar la sabiduría de mi cuerpo. A lo largo de estos años he acompañado procesos de vida de otras personas mientras, al mismo tiempo, atravesaba y profundizaba en el mío propio.</p>
+                <p>Llegué a Compassionate Inquiry® porque, a pesar de toda la toma de conciencia, la comprensión y el trabajo personal que había realizado, mi cuerpo comenzó a dar señales de alarma. Aquí encontré algo que no había encontrado hasta entonces: un espacio seguro y compasivo que me permitió acercarme a la raíz profunda de mi dolor, reconciliarme con mi historia y conectar con mi cuerpo y sabiduría interna.</p>
+                <p>Esta experiencia transformó también mi manera de entender el acompañamiento, porque pude experimentar en mí misma lo que puede cambiar nuestra vida cuando encontramos un espacio suficientemente seguro para sentir y recibir aquello que, como seres humanos, necesitamos. Un espacio que nos permita procesar e integrar aquello que, en algún momento de nuestra historia, no pudimos sentir, expresar o elaborar, y que ha seguido condicionando nuestra manera de sentirnos, relacionarnos y vivir.</p>
+                <p>Hoy pongo a tu servicio todo lo aprendido y vivido en mi proceso personal, junto con mi formación y experiencia profesional. Continúo formándome porque, para mí, seguir aprendiendo, profundizando y revisándome forma parte del compromiso y del cuidado que requiere acompañar a otra persona.</p>
+            </div>
+            <div class="paqui-photo">
+                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=500&h=667&fit=crop" alt="Paqui junto al árbol - momento contemplativo">
+            </div>
+        </div>
+    </section>
+
+    <!-- S8: CÓMO EMPEZAR -->
+    <section>
+        <div class="empezar-section">
+            <div class="empezar-text">
+                <h2>Cómo puedes empezar</h2>
+                <h3>Sesiones individuales</h3>
+                <p>No necesitas saber exactamente qué te pasa ni tener claro por dónde empezar. Podemos comenzar por aquello que esté presente para ti en este momento.</p>
+                <p>Puedes realizar una sesión puntual si hay una situación concreta que quieras atender o, si lo necesitas, dar continuidad al proceso a través de varias sesiones.</p>
+                <p><strong>Formato:</strong> Online<br>
+                <strong>Duración:</strong> 50–60 minutos<br>
+                <strong>Precio por sesión:</strong> 70 €<br>
+                <strong>Tarifa adaptada:</strong> Disponible previa consulta<br>
+                <strong>Opciones:</strong> Sesión puntual o proceso de acompañamiento</p>
+                <button class="cta-button" onclick="document.getElementById('contacto').scrollIntoView({behavior: 'smooth'})">Reservar una sesión</button>
+            </div>
+            <div class="empezar-photo">
+                <img src="https://images.unsplash.com/photo-1544959606-a04e1bb1e96c?w=500&h=667&fit=crop" alt="Paqui en otoño - sonriendo y presente">
+            </div>
+        </div>
+    </section>
+
+    <!-- S9: TESTIMONIOS -->
+    <section>
+        <div class="container">
+            <h2>Testimonios</h2>
+            <div class="testimonios">
+                <div class="testimonial">
+                    <div class="testimonial-quote">"Con Paqui he vivido el proceso de transformación más profundo de mi vida. Me ha ayudado a ver, sentir y sostener el dolor más profundo desde un lugar de comprensión y compasión."</div>
+                    <div class="testimonial-author">— Madre uniparental</div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-quote">"Paqui, gracias por mostrarnos que es posible transformar el dolor en amor y la herida en camino. Tu dulzura, tu escucha y tu mirada compasiva nos sostienen en cada paso. Eres la madre sabia, la tutora presente, la guía que acompaña sin juicio y con todo el corazón."</div>
+                    <div class="testimonial-author">— Alumnas del Máster en Crianza Consciente<br>Noviembre 2025</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- S10: CTA FINAL -->
+    <section class="cta-final">
+        <div class="container">
+            <p style="font-size: 1.1em; margin-bottom: 20px;">No necesitas saber exactamente qué te pasa ni tener todas las respuestas.</p>
+            <p style="font-size: 1.1em; margin-bottom: 20px;">Te ofrezco un espacio de cuidado seguro y compasivo para acercarte amablemente a comprender, procesar e integrar lo que sigue repitiéndose.</p>
+            <p style="font-size: 1.1em; margin-bottom: 30px;">Si resuena contigo, si sientes que puedo acompañarte en este proceso, estoy aquí.</p>
+            <button class="cta-button" onclick="document.getElementById('contacto').scrollIntoView({behavior: 'smooth'})">Reservar una sesión</button>
+        </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="contacto-section" id="contacto">
+        <div class="container">
+            <h2>¿Listo para dar el primer paso?</h2>
+            <div class="form-message" id="formMessage"></div>
+            <form class="form-container" id="contactForm" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="mensaje">Mensaje</label>
+                    <textarea id="mensaje" name="mensaje" required minlength="10"></textarea>
+                </div>
+                <button type="submit" class="form-submit">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
     <footer>
-        <p>&copy; 2026 Paqui. Sesiones de acompañamiento en Compassionate Inquiry®</p>
-        <p style="margin-top: 10px; opacity: 0.8;">Hecho con coherencia y cuidado</p>
+        <p>Paqui Romero | Acompañamiento en Compassionate Inquiry®</p>
+        <p>Septiembre 2026</p>
     </footer>
+
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            const formMessage = document.getElementById('formMessage');
+            const nombre = document.getElementById('nombre').value;
+            const email = document.getElementById('email').value;
+            const mensaje = document.getElementById('mensaje').value;
+
+            // Validación básica
+            if (!nombre || !email || !mensaje) {
+                showMessage('Por favor completa todos los campos', 'error');
+                return;
+            }
+
+            if (mensaje.length < 10) {
+                showMessage('El mensaje debe tener al menos 10 caracteres', 'error');
+                return;
+            }
+
+            // Email URL encode para mailto
+            const subject = encodeURIComponent('Nuevo contacto - Paqui Romero');
+            const body = encodeURIComponent(`Nombre: ${nombre}\nEmail: ${email}\n\nMensaje:\n${mensaje}`);
+
+            // Abrir cliente de email (fallback)
+            window.location.href = `mailto:ci.paquiromero@gmail.com?subject=${subject}&body=${body}`;
+
+            showMessage('¡Gracias! Tu mensaje está listo para enviar desde tu cliente de email. Si no se abre automáticamente, copia el mensaje que aparece.', 'success');
+
+            // Limpiar formulario
+            document.getElementById('contactForm').reset();
+        }
+
+        function showMessage(text, type) {
+            const messageEl = document.getElementById('formMessage');
+            messageEl.textContent = text;
+            messageEl.className = `form-message ${type}`;
+            messageEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    </script>
 </body>
 </html>
